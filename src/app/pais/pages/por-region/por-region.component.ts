@@ -26,7 +26,11 @@ export class PorRegionComponent {
     return (region===this.regionActiva)? 'btn btn-primary': 'btn btn-outline-primary'
   }
   activarRegion(region : string){ 
+    if(region === this.regionActiva) { 
+      return;
+    }
     this.regionActiva = region;
+    this.paises = [];
 // todo: hacer el llamado al servicio
 this.paisesService.buscarRegion(region).subscribe(
   (paisRegion: Country[])=>{ 

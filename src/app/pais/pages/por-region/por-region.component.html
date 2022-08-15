@@ -17,6 +17,8 @@
 {{region | titlecase}}
 </button>
 </div>
+<div *ngIf="paises.length > 0">
 <app-pais-table [countries]="paises">
 </app-pais-table>
+</div>
 </div>
